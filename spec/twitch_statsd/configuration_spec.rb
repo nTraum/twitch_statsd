@@ -49,4 +49,21 @@ RSpec.describe TwitchStatsd::Configuration do
       end
     end
   end
+
+  describe ".statsd_namespace" do
+    context "when not specified via environment variable" do
+      it "returns nil" do
+        expect(subject.statsd_namespace).to be_nil
+      end
+    end
+
+    context "when specified via environment variable TWITCH_STATSD_NAMESPACE" do
+      let(:statsd_namespace) { "foobar" }
+      it "returns the specified namespace" do
+        with_modified_env(TWITCH_STATSD_NAMESPACE: statsd_namespace) do
+          expect(subject.statsd_namespace).to eq(statsd_namespace)
+        end
+      end
+    end
+  end
 end

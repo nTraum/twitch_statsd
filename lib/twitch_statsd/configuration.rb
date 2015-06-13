@@ -1,8 +1,9 @@
 module TwitchStatsd
   module Configuration
-    DEFAULT_CHECK_INTERVAL = 60
-    DEFAULT_STATSD_HOST    = "127.0.0.1"
-    DEFAULT_STATSD_PORT    = 8125
+    DEFAULT_CHECK_INTERVAL   = 60
+    DEFAULT_STATSD_HOST      = "127.0.0.1"
+    DEFAULT_STATSD_PORT      = 8125
+    DEFAULT_STATSD_NAMESPACE = nil
 
     module_function
 
@@ -16,6 +17,10 @@ module TwitchStatsd
       else
         DEFAULT_STATSD_PORT
       end
+    end
+
+    def statsd_namespace
+      custom_statsd_namespace || DEFAULT_STATSD_NAMESPACE
     end
 
     def check_interval
@@ -38,6 +43,10 @@ module TwitchStatsd
 
     def self.custom_statsd_port
       ENV["TWITCH_STATSD_PORT"]
+    end
+
+    def self.custom_statsd_namespace
+      ENV["TWITCH_STATSD_NAMESPACE"]
     end
   end
 end
