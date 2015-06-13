@@ -1,5 +1,3 @@
-require "spec_helper"
-
 describe TwitchStatsd do
   it "has a version number" do
     expect(described_class::VERSION).not_to be nil
