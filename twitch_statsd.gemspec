@@ -18,10 +18,12 @@ Gem::Specification.new do |spec|
   spec.require_paths         = ["lib"]
   spec.required_ruby_version = "~> 2.1"
 
-  spec.add_runtime_dependency "twitch",            "~> 0.1"
   spec.add_runtime_dependency "rufus-scheduler",   "~> 3.1"
+  spec.add_runtime_dependency "statsd-ruby",       "~> 1.2"
+  spec.add_runtime_dependency "twitch",            "~> 0.1"
 
   spec.add_development_dependency "bundler",       "~> 1.10"
+  spec.add_development_dependency "climate_control"
   spec.add_development_dependency "coveralls"
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-bundler"

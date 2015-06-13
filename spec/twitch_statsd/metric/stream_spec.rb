@@ -1,6 +1,4 @@
-require "spec_helper"
-
-describe TwitchStatsd::Metric::Stream do
+RSpec.describe TwitchStatsd::Metric::Stream do
   let(:viewers)      { 123 }
   let(:game)         { "Team Fortress 2" }
   let(:average_fps)  { 24.9 }

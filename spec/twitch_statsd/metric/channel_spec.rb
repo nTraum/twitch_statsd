@@ -1,6 +1,4 @@
-require "spec_helper"
-
-describe TwitchStatsd::Metric::Channel do
+RSpec.describe TwitchStatsd::Metric::Channel do
   let(:delay)     { 0 }
   let(:followers) { 100 }
   let(:views)     { 2000 }

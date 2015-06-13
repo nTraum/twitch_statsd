@@ -1,6 +1,4 @@
-require "spec_helper"
-
-describe TwitchStatsd::Monitor do
+RSpec.describe TwitchStatsd::Monitor do
   describe "#interval" do
     context "when it has not been specified" do
       subject { described_class.new }
