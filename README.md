@@ -1,24 +1,20 @@
 # TwitchStatsd
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/twitch_statsd`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Metrics collection for Twitch channels via StatsD
 
 ## Installation
 
-Add this line to your application's Gemfile:
+### Requirements
 
-```ruby
-gem 'twitch_statsd'
+  * Ruby 2.2 or newer (`ruby --version`)
+  * StatsD host running somwhere
+  * TODO more to come
+
+```
+$ gem install twitch_statsd
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install twitch_statsd
+##
 
 ## Usage
 
@@ -32,7 +28,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/twitch_statsd.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nTraum/twitch_statsd.
 
 
 ## License
