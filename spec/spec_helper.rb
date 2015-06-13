@@ -1,6 +1,8 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 
 require "simplecov"
-SimpleCov.start
+SimpleCov.start do
+  minimum_coverage(100)
+end
 
 require "twitch_statsd"
