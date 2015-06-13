@@ -1,4 +1,5 @@
 # TwitchStatsd
+[![Build Status](https://travis-ci.org/nTraum/twitch_statsd.svg)](https://travis-ci.org/nTraum/twitch_statsd)
 
 Metrics collection for Twitch channels via StatsD
 
