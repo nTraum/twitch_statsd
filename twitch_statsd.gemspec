@@ -3,19 +3,20 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "twitch_statsd/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "twitch_statsd"
-  spec.version       = TwitchStatsd::VERSION
-  spec.authors       = ["Philipp Preß"]
-  spec.email         = ["philipp.press@googlemail.com"]
+  spec.name                  = "twitch_statsd"
+  spec.version               = TwitchStatsd::VERSION
+  spec.authors               = ["Philipp Preß"]
+  spec.email                 = ["philipp.press@googlemail.com"]
 
-  spec.summary       = "Metrics collection for Twitch channels via StatsD"
-  spec.homepage      = "https://github.com/nTraum/twitch_statsd"
-  spec.license       = "MIT"
+  spec.summary               = "Metrics collection for Twitch channels via StatsD"
+  spec.homepage              = "https://github.com/nTraum/twitch_statsd"
+  spec.license               = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.files                 = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.bindir                = "exe"
+  spec.executables           = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.require_paths         = ["lib"]
+  spec.required_ruby_version = "~> 2.1"
 
   spec.add_runtime_dependency "twitch",            "~> 0.1"
   spec.add_runtime_dependency "rufus-scheduler",   "~> 3.1"

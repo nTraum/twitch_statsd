@@ -1,13 +1,13 @@
 # TwitchStatsd
 [![Build Status](https://travis-ci.org/nTraum/twitch_statsd.svg)](https://travis-ci.org/nTraum/twitch_statsd) [![Coverage Status](https://coveralls.io/repos/nTraum/twitch_statsd/badge.svg)](https://coveralls.io/r/nTraum/twitch_statsd) [![Code Climate](https://codeclimate.com/github/nTraum/twitch_statsd/badges/gpa.svg)](https://codeclimate.com/github/nTraum/twitch_statsd)
 
-Metrics collection for Twitch channels via StatsD
+Metrics collection for Twitch channels via StatsD.
 
 ## Installation
 
 ### Requirements
 
-  * Ruby 2.2 or newer (`ruby --version`)
+  * Ruby 2.1 or newer (`ruby --version`)
   * StatsD host running somwhere
   * TODO more to come
 
