@@ -10,6 +10,7 @@ module TwitchStatsd
 
     def start
       scheduler.every(Configuration.check_interval, Collector::Channel)
+      scheduler.every(Configuration.check_interval, Collector::Stream)
       scheduler.join
     end
   end
