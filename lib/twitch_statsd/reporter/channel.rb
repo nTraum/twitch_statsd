@@ -5,7 +5,7 @@ module TwitchStatsd
     module Channel
       module_function
 
-      def call(_job = nil, _time = nil)
+      def call
         twitch       = Twitch.new
         api_response = twitch.channel(Configuration.channel_name)
         metric_from(response: api_response)

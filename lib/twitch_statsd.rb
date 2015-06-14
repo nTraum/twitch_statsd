@@ -1,3 +1,6 @@
+require "twitch_statsd/collector/channel"
+require "twitch_statsd/collector/stream"
+
 require "twitch_statsd/configuration"
 
 require "twitch_statsd/metric/channel"

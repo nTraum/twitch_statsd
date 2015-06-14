@@ -14,7 +14,7 @@ RSpec.describe TwitchStatsd::Monitor do
 
     it "schedules the channel reporter with the configured check interval once" do
       expect(scheduler).to receive(:every).with(TwitchStatsd::Configuration.check_interval,
-                                                TwitchStatsd::Reporter::Channel).once
+                                                TwitchStatsd::Collector::Channel).once
     end
 
     it "joins the current thread with the scheduler thread" do
