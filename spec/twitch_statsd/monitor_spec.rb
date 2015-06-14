@@ -1,20 +1,24 @@
 RSpec.describe TwitchStatsd::Monitor do
-  describe "#interval" do
-    context "when it has not been specified" do
-      subject { described_class.new }
+  describe "#start" do
+    let(:scheduler) { double(:scheduler) }
 
-      it "uses the default value" do
-        expect(subject.interval).to eq(described_class::DEFAULT_INTERVAL)
-      end
+    subject { described_class.new }
+
+    before do
+      allow(Rufus::Scheduler).to receive(:new).and_return(scheduler)
+      allow(scheduler).to receive(:every)
+      allow(scheduler).to receive(:join)
     end
 
-    context "when it has been specified" do
-      let(:interval) { 120 }
-      subject { described_class.new(interval: interval) }
+    after { subject.start }
 
-      it "uses the specified value" do
-        expect(subject.interval).to eq(interval)
-      end
+    it "schedules the channel reporter with the configured check interval once" do
+      expect(scheduler).to receive(:every).with(TwitchStatsd::Configuration.check_interval,
+                                                TwitchStatsd::Reporter::Channel).once
+    end
+
+    it "joins the current thread with the scheduler thread" do
+      expect(scheduler).to receive(:join).with(no_args).once
     end
   end
 end

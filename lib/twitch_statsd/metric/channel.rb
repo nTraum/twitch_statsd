@@ -1,9 +1,9 @@
 module TwitchStatsd
   module Metric
     class Channel
-      attr_reader :followers, :views, :delay
+      attr_reader :delay, :followers, :views
 
-      def initialize(followers:, views:, delay:)
+      def initialize(delay:, followers:, views:)
         @delay     = delay
         @followers = followers
         @views     = views

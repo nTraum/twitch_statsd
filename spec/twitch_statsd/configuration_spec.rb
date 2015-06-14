@@ -1,4 +1,13 @@
 RSpec.describe TwitchStatsd::Configuration do
+  describe ".channel_name" do
+    let(:channel_name) { "rocketbeanstv" }
+    it "returns the channel name as specified via environment variable TWITCH_STATSD_CHANNEL_NAME" do
+      with_modified_env(TWITCH_STATSD_CHANNEL_NAME: channel_name) do
+        expect(subject.channel_name).to eq(channel_name)
+      end
+    end
+  end
+
   describe ".check_interval" do
     context "when not specified via environment variable" do
       it "returns the default check interval" do

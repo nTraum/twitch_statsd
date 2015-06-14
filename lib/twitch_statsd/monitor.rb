@@ -2,12 +2,17 @@ require "rufus-scheduler"
 
 module TwitchStatsd
   class Monitor
-    DEFAULT_INTERVAL = 30
-
-    attr_reader :interval
-
-    def initialize(interval: DEFAULT_INTERVAL)
-      @interval = interval
+    def initialize
+      @scheduler = Rufus::Scheduler.new
     end
+
+    def start
+      scheduler.every(Configuration.check_interval, Reporter::Channel)
+      scheduler.join
+    end
+
+    protected
+
+    attr_reader :scheduler
   end
 end

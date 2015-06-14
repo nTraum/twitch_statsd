@@ -23,6 +23,10 @@ module TwitchStatsd
       custom_statsd_namespace || DEFAULT_STATSD_NAMESPACE
     end
 
+    def channel_name
+      custom_channel_name
+    end
+
     def check_interval
       if custom_check_interval
         Integer(custom_check_interval)
@@ -47,6 +51,10 @@ module TwitchStatsd
 
     def self.custom_statsd_namespace
       ENV["TWITCH_STATSD_NAMESPACE"]
+    end
+
+    def self.custom_channel_name
+      ENV.fetch("TWITCH_STATSD_CHANNEL_NAME")
     end
   end
 end
